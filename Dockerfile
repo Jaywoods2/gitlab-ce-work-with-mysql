@@ -19,6 +19,8 @@ RUN curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
 RUN curl -L get.rvm.io | bash -s stable
 RUN /bin/bash -l -c "rvm requirements"
 RUN /bin/bash -l -c "rvm install 2.4.1"
+RUN /bin/bash -l -c "rvm use 2.4.1"
+
 RUN ruby -v
 RUN gem install mysql2 -v '0.4.10' -- --with-mysql-lib=/usr/lib64/mysql
 # RUN gem install charlock_holmes -v '0.7.5'
