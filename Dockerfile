@@ -15,10 +15,11 @@ RUN apt-get update -q && \
 # COPY include /opt/gitlab/embedded/include
 
 RUN ruby -v
-RUN curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
-RUN curl -L get.rvm.io | bash -s stable
-RUN source ~/.rvm/scripts/rvm
-RUN rvm install ruby
+# RUN curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
+# RUN curl -L get.rvm.io | bash -s stable
+# RUN source ~/.rvm/scripts/rvm
+# RUN rvm install ruby
+RUN apt-get install -yq --no-install-recommends ruby-full
 RUN ruby -v
 RUN gem install mysql2 -v '0.4.10' -- --with-mysql-lib=/usr/lib64/mysql
 # RUN gem install charlock_holmes -v '0.7.5'
